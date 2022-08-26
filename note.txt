@@ -1,1 +1,10 @@
-brew install zbar
+#nvidia-docker pull dublado/pyzbar
+#nvidia-docker run --rm  --name=pyzbar -v  /mnt/pro/pyzbar:/mdata  --ulimit core=-1 --security-opt seccomp=unconfined  -tid   dublado/pyzbar    /bin/bash
+#pip3 install opencv-python
+
+
+nvidia-docker run --rm  --name=pyzbar -v  /mnt/pro/pyzbar:/mdata  --ulimit core=-1 --security-opt seccomp=unconfined  -tid   paddlepaddle/paddle:2.2.0-gpu-cuda10.2-cudnn7    /bin/bash
+apt-get install libzbar-dev
+pip3 install opencv-python
+pip3 install opencv-contrib-python
+pip3 install pyzbar
