@@ -8,3 +8,4 @@ apt-get install libzbar-dev
 pip3 install opencv-python
 pip3 install opencv-contrib-python
 pip3 install pyzbar
+pip2 install pyBarcode ## generate barcode
