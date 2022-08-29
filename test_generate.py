@@ -1,7 +1,7 @@
 from barcode.writer import ImageWriter
 from barcode.ean import EuropeanArticleNumber13
 import barcode
-
+from PIL import Image
 ## https://www.cnpython.com/pypi/pybarcode
 code_list = barcode.PROVIDED_BARCODES
 # print(code_list) SVG
@@ -17,4 +17,8 @@ def write_char(ch=None):
     code_pic = code39(ch, writer=writer)
     fullname = code_pic.save(ch,options={'format':'PNG'})
 
-write_char('12345')
+# write_char('12345') funame=12345.png
+def split_png(fname):
+    img = Image.open(fname).convert('L')
+    print(img.size)
+split_png('12345.png')
