@@ -31,8 +31,8 @@ def diff_list(ls):
     hold_place[index_no_equal_0] = 1
     # print(hold_place.sum())
     assert hold_place.sum()%2==0
-    print(hold_place.sum()//2)
-    assert 1>2
+    # print(hold_place.sum()//2)
+    # assert 1>2
     return hold_place
 
 ## return 每个条纹对应的右边宽度，条纹所在的像素位置
@@ -53,7 +53,7 @@ def get_x1_x2(ls,idx): ## exclude 0,-1,-2
     dst_np = diff_list(ls)
     no_slide1 = (idx+1)*10 - 1
     no_slide2 = no_slide1 + 10
-    each_wds,point_black = get_width_b2b(ls)
+    each_wds,point_black = get_width_b2b(dst_np)
     x1 = point_black[no_slide1]+each_wds[no_slide1]//2
     x2 = point_black[no_slide2] + each_wds[no_slide2] // 2
     return x1,x2
