@@ -9,12 +9,12 @@ code_list = barcode.PROVIDED_BARCODES
 # writer = ImageWriter(options={'format': 'SVG'})
 chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-. $/+%*'
 char_list = [w for w in chars]
-writer = ImageWriter(options={'format': 'PNG'})
+writer = ImageWriter()
 code39 = barcode.get_barcode_class('code39')
 # code_pic = code39(u'123', writer=writer)
 # fullname = code_pic.save('code39_barcode')
 def write_char(ch=None):
     code_pic = code39(ch, writer=writer)
-    fullname = code_pic.save(ch)
+    fullname = code_pic.save(ch,'format': 'PNG')
 
 write_char('12345')
