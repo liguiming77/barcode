@@ -16,13 +16,13 @@ code39 = barcode.get_barcode_class('code39')
 # code_pic = code39(u'123', writer=writer)
 # fullname = code_pic.save('code39_barcode')
 def diff_list(ls):
-    ls_fore = ls[1:]
+    ls_fore = ls[0:-1]
     ls_fore=np.insert(ls_fore,0,ls[0])
     # ls_fore.insert(ls[0])
     ls = np.asarray(ls).astype(np.int32)
-    print(ls)
+
     ls_fore = np.asarray(ls_fore).astype(np.int32)
-    print(ls_fore)
+
     hold_place = np.zeros(ls.size)
     diff = ls - ls_fore
     index_no_equal_0 = np.where(diff!=0)
