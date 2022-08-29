@@ -11,7 +11,7 @@ code_list = barcode.PROVIDED_BARCODES
 # print(code_list) SVG
 # writer = ImageWriter(options={'format': 'JPEG'})
 # writer = ImageWriter(options={'format': 'SVG'})
-chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-. $/+%'
+chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-. $/+%*'
 id2chars = {idx:w for idx,w in enumerate(chars)}
 char_list = [w for w in chars]
 writer = ImageWriter()
@@ -83,6 +83,16 @@ def split_png(fname,idx = 0,exclude=[0,-1,-2]):
 
 
 for idx,char in id2chars.items():
-    write_char(char,str(idx)+'.png')
+    write_char(char,str(idx))
+
+def get_cos_similar_matrix(v1, v2):
+    num = np.dot(v1, np.array(v2).T)  # 向量点乘
+    denom = np.linalg.norm(v1, axis=1).reshape(-1, 1) * np.linalg.norm(v2, axis=1)  # 求模长的乘积
+    res = num / denom
+    res[np.isneginf(res)] = 0
+    return 0.5 + 0.5 * res
+
+
+
 
 # split_png('1.png')
