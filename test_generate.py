@@ -64,7 +64,7 @@ def write_char(ch=None):
     code_pic = code39(ch, writer=writer)
     fullname = code_pic.save(ch,options={'format':'PNG'})
 
-# write_char('123456789') #funame=12345.png
+write_char('1') #funame=12345.png
 ## exclude * X*
 def split_png(fname,idx = 0,exclude=[0,-1,-2]):
     img = Image.open(fname).convert('L')
@@ -79,4 +79,4 @@ def split_png(fname,idx = 0,exclude=[0,-1,-2]):
     # ls = diff_list(w_points)
 
 
-split_png('123456789.png')
+split_png('1.png')
