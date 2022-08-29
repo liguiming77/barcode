@@ -38,6 +38,7 @@ def diff_list(ls):
 ## return 每个条纹对应的右边宽度，条纹所在的像素位置
 def get_width_b2b(ls):
     idx_equal_1 = np.where(ls==1)
+    print(ls)
     idx_fore = idx_equal_1[0:-1]
     idx = idx_equal_1[1:]
     idx_fore = np.asarray(idx_fore)
