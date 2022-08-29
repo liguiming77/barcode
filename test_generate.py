@@ -123,6 +123,7 @@ for idx,char in id2chars.items():
 
     res = np.asarray(get_cos_similar_multi(pic2,pic1)[0])
     sim = np.average(res)
+    print(sim)
     if sim>=maxsims:
         dest_char = char
         maxsims = sim
