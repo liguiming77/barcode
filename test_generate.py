@@ -23,6 +23,7 @@ def diff_list(ls):
     ls_fore = np.asarray(ls_fore).astype(np.int32)
     hold_place = np.zeros(ls.size)
     diff = ls - ls_fore
+    print(type(diff))
     index_no_equal_0 = np.where(diff!=0)
     hold_place[index_no_equal_0] = 1
     print(hold_place.sum())
