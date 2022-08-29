@@ -11,7 +11,7 @@ code_list = barcode.PROVIDED_BARCODES
 # print(code_list) SVG
 # writer = ImageWriter(options={'format': 'JPEG'})
 # writer = ImageWriter(options={'format': 'SVG'})
-chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-. $/+%*'
+chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-. $/+%'
 id2chars = {idx:w for idx,w in enumerate(chars)}
 char_list = [w for w in chars]
 writer = ImageWriter()
