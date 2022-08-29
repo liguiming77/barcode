@@ -95,18 +95,30 @@ def get_cos_similar_matrix(v1, v2):
     res[np.isneginf(res)] = 0
     return 0.5 + 0.5 * res
 
+def get_cos_similar_multi(v1: list, v2: list):
+    num = np.dot([v1], np.array(v2).T)  # 向量点乘
+    denom = np.linalg.norm(v1) * np.linalg.norm(v2, axis=1)  # 求模长的乘积
+    res = num / denom
+    res[np.isneginf(res)] = 0
+    return 0.5 + 0.5 * res
+
 dest_size=(40,280)
 pic1 = np.asarray(Image.open('badslice/2.png').convert('L'))
 pic1 = np.resize(pic1,dest_size)
-for i in 
-    pic2 = np.asarray(Image.open('labels/1.png').convert('L'))
+for idx,char in id2chars.items():
+    picpath = 'labels/'+str(idx)+'.png'
+    pic2 = np.asarray(Image.open(picpath).convert('L'))
+    pic2 = np.resize(pic2, (dest_size[1],dest_size[0]))
+    dim1,dim2 = pic2.shape
+    choice_no = dim1//3
+    pic2 = pic2[choice_no]
     #print(pic1.shape)
     #print(pic2.shape)
-    pic2 = np.transpose(pic2)
+    # pic2 = np.transpose(pic2)
     #print(pic2.shape)
-    pic2 = np.resize(pic2,dest_size)
+    # pic2 = np.resize(pic2,dest_size)
 
-print(get_cos_similar_matrix(pic1,pic2))
+    print(get_cos_similar_multi(pic2,pic1))
 
 
 # split_png('1.png')
