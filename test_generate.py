@@ -82,8 +82,8 @@ def split_png(fname,idx = 0,exclude=[0,-1,-2]):
     # ls = diff_list(w_points)
 
 
-for idx,char in id2chars.items():
-    write_char(char,'labels/'+str(idx))
+#for idx,char in id2chars.items():
+#    write_char(char,'labels/'+str(idx))
 
 def get_cos_similar_matrix(v1, v2):
     num = np.dot(v1, np.array(v2).T)  # 向量点乘
@@ -93,6 +93,9 @@ def get_cos_similar_matrix(v1, v2):
     return 0.5 + 0.5 * res
 
 
+pic1 = Image.open('badslice/1.png').convert('L')
+pic2 = Image.open('badslice/1.png').convert('L')
+print(pic1.size)
 
 
 # split_png('1.png')
