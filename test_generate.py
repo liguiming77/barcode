@@ -25,6 +25,7 @@ def diff_list(ls):
     diff = ls - ls_fore
     index_no_equal_0 = np.where(diff!=0)
     hold_place[index_no_equal_0] = 1
+    print(hold_place.sum())
     assert hold_place.sum()%2==0
     print(hold_place.sum()//2)
 
