@@ -95,7 +95,7 @@ def get_cos_similar_matrix(v1, v2):
     res[np.isneginf(res)] = 0
     return 0.5 + 0.5 * res
 
-def get_cos_similar_multi(v1: list, v2: list):
+def get_cos_similar_multi(v1, v2):
     num = np.dot([v1], np.array(v2).T)  # 向量点乘
     denom = np.linalg.norm(v1) * np.linalg.norm(v2, axis=1)  # 求模长的乘积
     res = num / denom
