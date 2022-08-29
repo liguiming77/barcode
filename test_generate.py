@@ -19,8 +19,8 @@ def diff_list(ls):
     ls_fore = ls[1:]
     ls_fore=np.insert(ls_fore,0,ls[0])
     # ls_fore.insert(ls[0])
-    ls = np.asarray(ls)
-    ls_fore = np.asarray(ls_fore)
+    ls = np.asarray(ls).astype(np.int32)
+    ls_fore = np.asarray(ls_fore).astype(np.int32)
     hold_place = np.zeros(ls.size)
     diff = ls - ls_fore
     index_no_equal_0 = np.where(diff!=0)
