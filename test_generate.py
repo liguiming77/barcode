@@ -16,9 +16,8 @@ code39 = barcode.get_barcode_class('code39')
 # code_pic = code39(u'123', writer=writer)
 # fullname = code_pic.save('code39_barcode')
 def diff_list(ls):
-
     ls_fore = ls[1:]
-    np.insert(ls_fore,0,ls[0])
+    ls_fore=np.insert(ls_fore,0,ls[0])
     # ls_fore.insert(ls[0])
     ls = np.asarray(ls)
     ls_fore = np.asarray(ls_fore)
