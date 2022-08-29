@@ -17,8 +17,8 @@ def write_char(ch=None):
     code_pic = code39(ch, writer=writer)
     fullname = code_pic.save(ch,options={'format':'PNG'})
 
-# write_char('12345') funame=12345.png
+write_char('123456789') #funame=12345.png
 def split_png(fname):
     img = Image.open(fname).convert('L')
     print(img.size)
-split_png('12345.png')
+split_png('123456789.png')
