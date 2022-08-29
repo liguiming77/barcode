@@ -93,9 +93,12 @@ def get_cos_similar_matrix(v1, v2):
     return 0.5 + 0.5 * res
 
 
-pic1 = Image.open('badslice/1.png').convert('L')
-pic2 = Image.open('badslice/1.png').convert('L')
-print(pic1.size)
+pic1 = np.asarray(Image.open('badslice/1.png').convert('L'))
+pic2 = np.asarray(Image.open('labels/1.png').convert('L'))
+print(pic1.shape)
+print(pic2.shape)
+pic2 = np.transpose(pic2)
+print(pic2.shape)
 
 
 # split_png('1.png')
