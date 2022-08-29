@@ -65,7 +65,8 @@ def write_char(ch,outname):
     code_pic = code39(ch, writer=writer)
     fullname = code_pic.save(outname,options={'format':'PNG'})
 
-# write_char('1') #funame=12345.png
+write_char('*') #funame=12345.png
+assert 1>2
 ## exclude * X*
 
 def split_png(fname,idx = 0,exclude=[0,-1,-2]):
