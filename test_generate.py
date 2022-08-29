@@ -17,3 +17,4 @@ def write_char(ch=None):
     code_pic = code39(ch, writer=writer)
     fullname = code_pic.save(ch)
 
+write_char('12345')
