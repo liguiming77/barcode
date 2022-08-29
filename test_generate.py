@@ -32,6 +32,8 @@ def diff_list(ls):
     assert hold_place.sum()%2==0
     # print(hold_place.sum()//2)
     return hold_place
+
+## return 每个条纹对应的右边宽度，条纹所在的像素位置
 def get_width_b2b(ls):
     idx_equal_1 = np.where(ls==1)
     idx_fore = idx_equal_1[0:-1]
@@ -40,7 +42,7 @@ def get_width_b2b(ls):
     idx = np.asarray(idx)
     diff = idx - idx_fore
     diff = np.insert(diff,-1,10)
-    return diff,idx_equal_1 ## 每个条纹对应的右边宽度，条纹所在的像素位置
+    return diff,idx_equal_1
 
 
 
