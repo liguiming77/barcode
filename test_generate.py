@@ -12,6 +12,7 @@ code_list = barcode.PROVIDED_BARCODES
 # writer = ImageWriter(options={'format': 'JPEG'})
 # writer = ImageWriter(options={'format': 'SVG'})
 chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-. $/+%*'
+id2chars = {idx:w for idx,w in enumerate(chars)}
 char_list = [w for w in chars]
 writer = ImageWriter()
 code39 = barcode.get_barcode_class('code39')
@@ -64,8 +65,9 @@ def write_char(ch=None):
     code_pic = code39(ch, writer=writer)
     fullname = code_pic.save(ch,options={'format':'PNG'})
 
-write_char('1') #funame=12345.png
+write_char(' ') #funame=12345.png
 ## exclude * X*
+
 def split_png(fname,idx = 0,exclude=[0,-1,-2]):
     img = Image.open(fname).convert('L')
     img_np = np.asarray(img)
@@ -79,4 +81,7 @@ def split_png(fname,idx = 0,exclude=[0,-1,-2]):
     # ls = diff_list(w_points)
 
 
-split_png('1.png')
+# for idx,char in id2chars.items():
+
+
+# split_png('1.png')
