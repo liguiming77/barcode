@@ -20,10 +20,11 @@ def diff_list(ls):
     ls_fore=np.insert(ls_fore,0,ls[0])
     # ls_fore.insert(ls[0])
     ls = np.asarray(ls).astype(np.int32)
+    print(ls)
     ls_fore = np.asarray(ls_fore).astype(np.int32)
+    print(ls_fore)
     hold_place = np.zeros(ls.size)
     diff = ls - ls_fore
-    print(type(diff))
     index_no_equal_0 = np.where(diff!=0)
     hold_place[index_no_equal_0] = 1
     print(hold_place.sum())
