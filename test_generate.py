@@ -116,11 +116,11 @@ for idx,char in id2chars.items():
     #print(pic1.shape)
     #print(pic2.shape)
     # pic2 = np.transpose(pic2)
-    print(pic2)
+    # print(pic2)
     # pic2 = np.resize(pic2,dest_size)
 
-    res = np.asarray(get_cos_similar_multi(pic2,pic1))
-    print(res.shape)
+    res = np.asarray(get_cos_similar_multi(pic2,pic1)[0])
+    print(np.average(res))
     assert 1>2
 
 
