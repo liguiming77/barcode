@@ -82,11 +82,11 @@ def split_png(fname,outname,idx = 0,exclude=[0,-1,-2]):
     # ls = diff_list(w_points)
 
 
-for idx,char in id2chars.items():
+#for idx,char in id2chars.items():
     #write_char(char,'labels/'+str(idx))
-    picpath = 'samples/'+str(idx)+'.png'
-    outpath = 'labels/'+str(idx)+'.png'
-    split_png(picpath,outpath)
+#    picpath = 'samples/'+str(idx)+'.png'
+#    outpath = 'labels/'+str(idx)+'.png'
+#    split_png(picpath,outpath)
 
 def get_cos_similar_matrix(v1, v2):
     num = np.dot(v1, np.array(v2).T)  # 向量点乘
@@ -95,13 +95,18 @@ def get_cos_similar_matrix(v1, v2):
     res[np.isneginf(res)] = 0
     return 0.5 + 0.5 * res
 
+dest_size=(40,280)
+pic1 = np.asarray(Image.open('badslice/2.png').convert('L'))
+pic1 = np.resize(pic1,dest_size)
+for i in 
+    pic2 = np.asarray(Image.open('labels/1.png').convert('L'))
+    #print(pic1.shape)
+    #print(pic2.shape)
+    pic2 = np.transpose(pic2)
+    #print(pic2.shape)
+    pic2 = np.resize(pic2,dest_size)
 
-pic1 = np.asarray(Image.open('badslice/1.png').convert('L'))
-pic2 = np.asarray(Image.open('labels/1.png').convert('L'))
-print(pic1.shape)
-print(pic2.shape)
-pic2 = np.transpose(pic2)
-print(pic2.shape)
+print(get_cos_similar_matrix(pic1,pic2))
 
 
 # split_png('1.png')
