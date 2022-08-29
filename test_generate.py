@@ -83,7 +83,7 @@ def split_png(fname,idx = 0,exclude=[0,-1,-2]):
 
 
 for idx,char in id2chars.items():
-    write_char(char,str(idx))
+    write_char(char,'labels/'+str(idx))
 
 def get_cos_similar_matrix(v1, v2):
     num = np.dot(v1, np.array(v2).T)  # 向量点乘
