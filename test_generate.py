@@ -15,6 +15,6 @@ code39 = barcode.get_barcode_class('code39')
 # fullname = code_pic.save('code39_barcode')
 def write_char(ch=None):
     code_pic = code39(ch, writer=writer)
-    fullname = code_pic.save(ch,'format': 'PNG')
+    fullname = code_pic.save(ch,'format'='PNG')
 
 write_char('12345')
