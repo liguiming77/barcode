@@ -69,7 +69,7 @@ def write_char(ch,outname):
 # assert 1>2
 ## exclude * X*
 
-def split_png(fname,idx = 0,exclude=[0,-1,-2]):
+def split_png(fname,outname,idx = 0,exclude=[0,-1,-2]):
     img = Image.open(fname).convert('L')
     img_np = np.asarray(img)
     h,w = img_np.shape
@@ -78,12 +78,15 @@ def split_png(fname,idx = 0,exclude=[0,-1,-2]):
     x1,x2 = get_x1_x2(w_points,idx=0)
     img_np = img_np[:,x1:x2]
     img_pic = Image.fromarray(np.uint8(img_np)) # np 2 PIL
-    img_pic.save(os.path.basename(fname)+'_split_pil.png',quality=95)
+    img_pic.save(outname,quality=95)
     # ls = diff_list(w_points)
 
 
-#for idx,char in id2chars.items():
-#    write_char(char,'labels/'+str(idx))
+for idx,char in id2chars.items():
+    #write_char(char,'labels/'+str(idx))
+    picpath = 'samples/'+str(idx)+'.png'
+    outpath = 'labels/'+str(idx)+'.png'
+    split_png(picpath,outpath)
 
 def get_cos_similar_matrix(v1, v2):
     num = np.dot(v1, np.array(v2).T)  # 向量点乘
