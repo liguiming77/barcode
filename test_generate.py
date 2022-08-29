@@ -106,6 +106,8 @@ dest_size=(40,280)
 pic1 = np.asarray(Image.open('badslice/2.png').convert('L'))
 pic1 = np.resize(pic1,(dest_size[1],dest_size[0]))
 # print(pic1.shape)
+maxsims = 0.
+reschars = None
 for idx,char in id2chars.items():
     picpath = 'labels/'+str(idx)+'.png'
     pic2 = np.asarray(Image.open(picpath).convert('L'))
@@ -120,8 +122,12 @@ for idx,char in id2chars.items():
     # pic2 = np.resize(pic2,dest_size)
 
     res = np.asarray(get_cos_similar_multi(pic2,pic1)[0])
-    print(np.average(res))
-    assert 1>2
+    sim = np.average(res)
+    if sim>=maxsims:
+        dest_char = char
+        maxsims = sim
+print(dest_char)
+    # assert 1>2
 
 
 
