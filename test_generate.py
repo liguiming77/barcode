@@ -61,11 +61,11 @@ def get_x1_x2(ls,idx): ## exclude 0,-1,-2
     return x1,x2
     ### 0,1,3
 
-def write_char(ch=None):
+def write_char(ch,outname):
     code_pic = code39(ch, writer=writer)
-    fullname = code_pic.save(ch,options={'format':'PNG'})
+    fullname = code_pic.save(outname,options={'format':'PNG'})
 
-write_char(' ') #funame=12345.png
+# write_char('1') #funame=12345.png
 ## exclude * X*
 
 def split_png(fname,idx = 0,exclude=[0,-1,-2]):
@@ -81,7 +81,7 @@ def split_png(fname,idx = 0,exclude=[0,-1,-2]):
     # ls = diff_list(w_points)
 
 
-# for idx,char in id2chars.items():
-
+for idx,char in id2chars.items():
+    write_char(char,str(idx)+'.png')
 
 # split_png('1.png')
