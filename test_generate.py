@@ -103,7 +103,7 @@ def get_cos_similar_multi(v1, v2):
     return 0.5 + 0.5 * res
 
 dest_size=(40,280)
-pic1 = np.asarray(Image.open('badslice/4.png').convert('L'))
+pic1 = np.asarray(Image.open('badslice/5.png').convert('L'))
 pic1 = np.resize(pic1,(dest_size[1],dest_size[0]))
 # print(pic1.shape)
 maxsims = 0.
