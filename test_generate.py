@@ -42,6 +42,7 @@ def get_width_b2b(ls):
     idx_fore = np.asarray(idx_fore)
     idx = np.asarray(idx)
     diff = idx - idx_fore
+    print(diff)
     diff = np.insert(diff,-1,10)
     return diff,idx_equal_1
 
