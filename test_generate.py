@@ -104,7 +104,7 @@ def get_cos_similar_multi(v1, v2):
 
 dest_size=(40,280)
 pic1 = np.asarray(Image.open('badslice/2.png').convert('L'))
-# pic1 = np.resize(pic1,dest_size)
+pic1 = np.resize(pic1,(dest_size[1],dest_size[0]))
 print(pic1.shape)
 for idx,char in id2chars.items():
     picpath = 'labels/'+str(idx)+'.png'
