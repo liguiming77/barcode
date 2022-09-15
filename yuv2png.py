@@ -44,6 +44,6 @@ def YUVvideo2IMGs(path, savepath, height, width):
 if __name__ == '__main__':
     filepath = '../视频文件路径/'
     savepath = '/生成的png图像路径/'
-    height = 2160
-    width = 3840
+    height = 320
+    width = 240
     YUVvideo2IMGs(filepath, savepath, height, width)
