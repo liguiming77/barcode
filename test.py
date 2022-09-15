@@ -7,7 +7,7 @@ from tools import default_loader
 from glob import glob
 input_size = 50
 newsize=(50,50)
-label_num =43
+label_num =44
 labels_ids = [str(w) for w in range(label_num)]
 chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ-. $/+%*'
 id2chars = {idx:w for idx,w in enumerate(chars)}
